@@ -14,11 +14,10 @@ public class UomUtil {
 		Iterator<Uom> uomItr=uomList.iterator();
 		while (uomItr.hasNext()) {
 			Uom uom = (Uom) uomItr.next();
-			uom.setUomType(getUomTypes().get(uom.getUomType()));
+			if(getUomTypes().get(uom.getUomType())!=null)
+				uom.setUomType(getUomTypes().get(uom.getUomType()));
 		}
 		return uomList;
-		
-		
 	}
 
 	public Map<String,String> getUomTypes() {
